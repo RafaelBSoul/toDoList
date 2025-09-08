@@ -1,18 +1,22 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import listaTarefas.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ListaTarefas novatarefa = new ListaTarefas();
-        List<ListaTarefas>noTa = new ArrayList<>();
-        novatarefa.setTarefa("coco");
-        noTa.add(novatarefa);
-        
+        Scanner entrada = new Scanner(System.in);// para entrada de dados através do terminal
+       String tarefa = entrada.nextLine();
+        ListaTarefas novaTarefa = new ListaTarefas();
+        List<ListaTarefas> novaListaTarefa = new ArrayList<>();
+novaTarefa.setTarefa(tarefa);
+novaListaTarefa.add(novaTarefa);
 
-System.out.println(novatarefa);
-System.out.println(noTa);
+System.out.println(novaListaTarefa);
 
+
+
+entrada.close();
     }
 }
