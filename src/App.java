@@ -8,21 +8,20 @@ import listaTarefas.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner entrada = new Scanner(System.in);// para entrada de dados através do terminal
-       String tarefa = entrada.nextLine();// Crio uma variavel string para receber "entrada" do Scanner
-        ListaTarefas novaTarefa;  //Crio o objeto nova tarefa, da classe Lista tarefa
-
         List<ListaTarefas> novaListaTarefa = new ArrayList<>(); // Um arraylist por ser dinamico para cria lista de tarefas
         FileWriter escrever = new FileWriter("MEU Arquivo");
         escrever.write("Escrever textoes");
 
-                        tarefa = entrada.nextLine();// Crio uma variavel string para receber "entrada" do Scanner
-
-        novaTarefa.setTarefa(tarefa);
+            for(int i=0;i<=5;i++){
+ListaTarefas novaTarefa = new ListaTarefas();  //Crio o objeto nova tarefa, da classe Lista tarefa
+String tarefas = entrada.nextLine();
+novaTarefa.setTarefa(tarefas);
 novaListaTarefa.add(novaTarefa);
-
 System.out.println(novaListaTarefa);
-escrever.write(tarefa);
-
+escrever.write(novaTarefa.getTarefa());
+        }
+escrever.write("-------------");
+//Fechamento de Scanner e FilerWriter.
 escrever.close();
 entrada.close();
     }
